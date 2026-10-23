@@ -1,0 +1,938 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #253047;
+    background-color: #f3f5f9;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 26px;
+    color:red;
+
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+a {
+    color: #164b9b;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+main {
+    flex: 1;
+
+    width: 92%;
+    max-width: 1300px;
+    margin: 32px  auto;
+}
+
+/* Moi section la mot khoi noi dung. */
+main > section {
+    margin-bottom: 28px;
+    padding: 28px;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* Cac nut dung chung mot kieu dinh dang. */
+.nut, .banner > a, button {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #f1093b;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #dd0d30;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nut:hover, .banner > a:hover, button:hover {
+    background-color: #0e326b;
+}
+
+/* 2. DAU TRANG VA MENU: FLEXBOX */
+header {
+    position: relative;
+    z-index: 20;
+    padding: 22px 0;
+    color: white;
+    background-color: #d70018;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Can dau trang thang hang voi main; ten shop va khau hieu cung mot nhom. */
+.noi-dung-dau-trang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 92%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.thuong-hieu, header nav {
+    min-width: 0;
+}
+
+/* Nhom ben trai gom nut Menu va ten cua hang. */
+.cum-ben-trai {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Menu ngang luon hien thi ben phai. */
+.menu-ngang {
+    margin-left: auto;
+}
+
+.menu-ngang ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-ngang a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.menu-ngang a:hover, .menu-ngang .dang-xem {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.menu-ngang a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.menu-ngang .lien-he-menu {
+    color: #b80015;
+    background-color: white;
+}
+
+.menu-ngang .lien-he-menu:hover,
+.menu-ngang .lien-he-menu.dang-xem {
+    background-color: #ffe5e9;
+}
+
+.menu-ngang .lien-he-menu.dang-xem {
+    text-decoration: underline;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.khau-hieu {
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #fff0f2;
+}
+
+/* MENU THA: DETAILS GIU TRANG THAI MO/DONG, SUMMARY LA NUT BAM. */
+.menu-tha {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nut-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #b80015;
+    background-color: white;
+    list-style: none;
+    cursor: pointer;
+}
+
+.nut-menu::-webkit-details-marker {
+    display: none;
+}
+
+.nut-menu:hover, .menu-tha[open] > .nut-menu {
+    background-color: #ffe5e9;
+}
+
+.nut-menu:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+.mui-ten-menu {
+    transition: transform 0.2s;
+}
+
+.menu-tha[open] .mui-ten-menu {
+    transform: rotate(180deg);
+}
+
+/* Danh sach nam ngay duoi nut, khong day noi dung trang xuong. */
+.menu-tha nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: auto;
+    z-index: 30;
+    width: 240px;
+    max-width: calc(100vw - 32px);
+    max-height: 60vh;
+    overflow: auto;
+    padding: 8px;
+    border: 1px solid #e0e5ee;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.menu-tha nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-tha nav a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #253047;
+    transition: background-color 0.3s;
+}
+
+.menu-tha nav a:hover, .menu-tha nav a:focus-visible {
+    color: #b80015;
+    background-color: #fff0f2;
+}
+
+.menu-tha nav .dang-xem {
+    color: #b80015;
+    background-color: #fff0f2;
+}
+
+.menu-tha nav a:focus-visible {
+    outline: 2px solid #b80015;
+    outline-offset: -2px;
+}
+
+.menu-tha nav .lien-he-menu {
+    color: white;
+    background-color: #d70018;
+}
+
+.menu-tha nav .lien-he-menu:hover, .menu-tha nav .lien-he-menu:focus-visible {
+    color: white;
+    background-color: #b80015;
+}
+
+.menu-tha nav .lien-he-menu.dang-xem {
+    background-color: #b80015;
+    text-decoration: underline;
+}
+
+/* CAC TRANG DUNG CHUNG MENU, CSS VA PHAN CUOI TRANG. */
+.mo-ta-trang {
+    margin-bottom: 24px;
+    color: #536078;
+}
+
+.danh-sach-trang {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.the-trang {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid #f1dfe2;
+    border-radius: 8px;
+    color: #253047;
+    background-color: #fff8f9;
+    transition: transform 0.3s;
+}
+
+.the-trang:hover {
+    transform: translateY(-4px);
+}
+
+.the-trang:focus-visible {
+    outline: 2px solid #b80015;
+    outline-offset: 3px;
+}
+
+.the-trang span {
+    margin-top: auto;
+    font-weight: bold;
+    color: #b80015;
+}
+
+/* 3. BANNER: BA ANH CHUYEN BANG ANIMATION */
+.banner {
+    text-align: center;
+    background-color: #eaf2ff;
+}
+
+.slideshow {
+    margin-bottom: 24px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #dce7f7;
+}
+
+.danh-sach-banner {
+    display: flex;
+    animation: chuyen-banner 8s infinite;
+}
+
+.slideshow:hover .danh-sach-banner,
+.slideshow:focus .danh-sach-banner {
+    animation-play-state: paused;
+}
+
+/* Moi anh chiem 100% chieu rong khung slideshow. */
+.danh-sach-banner img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    background-color: #000000;
+}
+
+@keyframes chuyen-banner {
+    0%, 25% {
+        transform: translateX(0);
+    }
+    33%, 58% {
+        transform: translateX(-100%);
+    }
+    66%, 91% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* 4. TRANG GIOI THIEU: DUNG CHUNG STYLE.CSS VOI TRANG CHU */
+.duong-dan {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #536078;
+}
+
+.duong-dan a {
+    color: #b80015;
+    text-decoration: underline;
+}
+
+.duong-dan span {
+    margin: 0 8px;
+}
+
+.trang-con main h2 {
+    color: #253047;
+}
+
+.noi-dung-gioi-thieu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.noi-dung-gioi-thieu > img {
+    width: 46%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #edf1f7;
+}
+
+.noi-dung-gioi-thieu > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.nhan-gioi-thieu {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #b80015;
+}
+
+.noi-dung-gioi-thieu h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+.nut-gioi-thieu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.nut-gioi-thieu .nut-vien {
+    color: #b80015;
+    background-color: white;
+    border-color: #efd3d7;
+}
+
+.nut-gioi-thieu .nut-vien:hover {
+    background-color: #fff0f2;
+}
+
+.danh-sach-cam-ket {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.danh-sach-cam-ket li {
+    padding: 24px;
+    border: 1px solid #f1dfe2;
+    border-radius: 8px;
+    background-color: #fff8f9;
+}
+
+.so-cam-ket, .so-dich-vu {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #b80015;
+    background-color: #ffe5e9;
+}
+
+.danh-sach-cam-ket p {
+    margin-bottom: 0;
+}
+
+/* 5. SAN PHAM: GRID BON COT */
+.danh-sach-san-pham {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.the-san-pham {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #e0e5ee;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #0000000d;
+    transition: transform 0.3s;
+}
+
+.the-san-pham:hover {
+    transform: translateY(-5px);
+}
+
+.the-san-pham img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
+    object-fit: contain;
+    background-color: white;
+}
+
+.the-san-pham .gia {
+    font-size: 18px;
+    font-weight: bold;
+    color: #bb2636;
+}
+
+/* Day nut xuong cuoi the de cac nut thang hang. */
+.the-san-pham .nut {
+    margin-top: auto;
+    padding: 10px;
+}
+
+/* 6. BANG SO SANH */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 12px;
+    text-align: left;
+    color: #536078;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #d6ddeb;
+    text-align: left;
+}
+
+th {
+    color: white;
+    background-color: #164b9b;
+}
+
+tbody tr:hover {
+    background-color: #eaf2ff;
+}
+
+/* 7. DICH VU: GRID BA COT */
+.danh-sach-dich-vu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.the-dich-vu {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid #f1dfe2;
+    border-radius: 8px;
+    background-color: #fff8f9;
+}
+
+.the-dich-vu p {
+    margin-bottom: 24px;
+}
+
+.the-dich-vu .nut {
+    margin-top: auto;
+}
+
+.cac-buoc {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.cac-buoc li + li {
+    margin-top: 12px;
+}
+
+/* 8. FORM LIEN HE */
+form {
+    max-width: 700px;
+    margin-top: 24px;
+}
+
+.nhom-form {
+    margin-bottom: 16px;
+}
+
+.ghi-chu-form {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #536078;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b9c4d5;
+    border-radius: 6px;
+    font: inherit;
+    color: #253047;
+    background-color: white;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #164b9b;
+    outline-offset: 2px;
+    background-color: #f5f8ff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    margin: 0 8px 8px 0;
+}
+
+.nut-phu {
+    color: #164b9b;
+    background-color: white;
+}
+
+.nut-phu:hover {
+    background-color: #eaf2ff;
+}
+
+/* 9. CUOI TRANG */
+footer {
+    padding: 28px 16px;
+    text-align: center;
+    color: white;
+    background-color: #16345e;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* LIGHTBOX: BAM ANH DE XEM LON, BAM LIEN KET DONG DE QUAY LAI. */
+.mo-anh {
+    display: block;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.mo-anh span {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.mo-anh:hover {
+    color: #dd0d30;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox-noi-dung {
+    width: 100%;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: white;
+    text-align: center;
+}
+
+.dong-lightbox {
+    display: block;
+    margin-bottom: 12px;
+    text-align: right;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.lightbox h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.lightbox img {
+    width: 100%;
+    height: 55vh;
+    object-fit: contain;
+    margin: 0 auto 16px;
+}
+
+.dieu-huong-anh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.dieu-huong-anh a {
+    text-decoration: underline;
+}
+
+/* BAN DO NHUNG: IFRAME TU CO GIAN THEO KHUNG CHUA. */
+.lien-he-bo-cuc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: start;
+    margin-top: 24px;
+}
+
+.lien-he-bo-cuc > form {
+    margin-top: 0;
+    min-width: 0;
+}
+
+.thong-tin-ban-do {
+    min-width: 0;
+}
+
+.ban-do {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border: 1px solid #d6ddeb;
+    border-radius: 8px;
+    background-color: #eaf2ff;
+}
+
+.ban-do iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.lien-ket-ban-do {
+    display: inline-block;
+    margin-top: 12px;
+    text-decoration: underline;
+}
+
+/* HOI DAP MO/DONG BANG DETAILS VA SUMMARY, KHONG CAN JAVASCRIPT. */
+.chatbox {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 50;
+}
+
+.hop-hoi-dap > summary {
+    padding: 12px 18px;
+    border: 1px solid #dd0d30;
+    border-radius: 24px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: white;
+    background-color: #dd0d30;
+    cursor: pointer;
+}
+
+.noi-dung-hoi-dap {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12px);
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    max-height: 65vh;
+    overflow: auto;
+    padding: 20px;
+    border: 1px solid #d6ddeb;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+.noi-dung-hoi-dap h2 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.cau-hoi {
+    padding: 12px 0;
+    border-top: 1px solid #e0e5ee;
+}
+
+.cau-hoi summary {
+    font-weight: bold;
+    color: #164b9b;
+    cursor: pointer;
+}
+
+.cau-hoi p {
+    margin: 10px 0 0;
+}
+
+.ghi-chu-hoi-dap {
+    margin: 12px 0 0;
+    color: #536078;
+}
+
+/* 10. RESPONSIVE: TU BON COT XUONG HAI COT VA MOT COT */
+@media screen and (max-width: 992px) {
+    .noi-dung-dau-trang {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .menu-ngang {
+        width: 100%;
+    }
+
+    .menu-tha nav {
+        max-height: calc(100vh - 180px);
+    }
+
+    .danh-sach-san-pham, .danh-sach-trang {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .noi-dung-gioi-thieu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .noi-dung-gioi-thieu > img {
+        width: 100%;
+        height: 320px;
+    }
+
+    .danh-sach-cam-ket {
+        grid-template-columns: 1fr;
+    }
+
+    .lien-he-bo-cuc {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 20px 0;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .cum-ben-trai {
+        gap: 12px;
+    }
+
+    .nut-menu {
+        padding: 10px 12px;
+    }
+
+    .chu-menu, .mui-ten-menu {
+        display: none;
+    }
+
+    main > section {
+        padding: 18px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .menu-tha nav a, .menu-ngang a {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .danh-sach-san-pham, .danh-sach-dich-vu, .danh-sach-trang {
+        grid-template-columns: 1fr;
+    }
+
+    .danh-sach-banner img {
+        height: 180px;
+    }
+
+    .noi-dung-gioi-thieu > img {
+        height: 220px;
+    }
+
+    .noi-dung-gioi-thieu {
+        gap: 24px;
+    }
+
+    .noi-dung-gioi-thieu h2 {
+        font-size: 26px;
+    }
+
+    .nut-gioi-thieu .nut {
+        width: 100%;
+    }
+
+    .danh-sach-cam-ket li {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .lightbox {
+        padding: 12px;
+    }
+
+    .lightbox-noi-dung {
+        padding: 16px;
+    }
+
+    .dieu-huong-anh {
+        gap: 6px;
+        font-size: 14px;
+    }
+}

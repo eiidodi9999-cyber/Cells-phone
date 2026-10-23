@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng điện thoại</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <header id="trang-chu">
+        <div class="noi-dung-dau-trang">
+            <!-- Nut Menu va ten shop nam ben trai. -->
+            <div class="cum-ben-trai">
+                <details class="menu-tha">
+                    <summary class="nut-menu" aria-label="Menu">
+                        <span aria-hidden="true">&#9776;</span>
+                        <span class="chu-menu">Menu</span>
+                        <span class="mui-ten-menu" aria-hidden="true">&#9662;</span>
+                    </summary>
+                    <nav aria-label="Menu thu gọn">
+                        <ul>
+                            <li><a href="#index" class="dang-xem" aria-current="page">Trang chủ</a></li>
+                            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="#san-pham">Sản phẩm</a></li>
+                            <li><a href="#dich-vu">Dịch vụ</a></li>
+                            <li><a href="#lien-he" class="lien-he-menu">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </details>
+
+                <div class="thuong-hieu">
+                    <h1>Shop Cells Phone</h1>
+                    <p class="khau-hieu">Điện thoại phù hợp — Tư vấn tận tâm</p>
+                </div>
+            </div>
+
+            <!-- Cac lien ket trang luon hien thi ben phai. -->
+            <nav class="menu-ngang" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html" class="dang-xem" aria-current="page">Trang chủ</a></li>
+                    <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li><a href="san-pham.html">Sản phẩm</a></li>
+                    <li><a href="dich-vu.html">Dịch vụ</a></li>
+                    <li><a href="lien-he.html" class="lien-he-menu">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        
+        <section class="banner">
+            <h2>Khám phá tại Cells Phone</h2>
+            <div class="slideshow" tabindex="0" aria-label="Ảnh giới thiệu điện thoại. Đặt chuột hoặc chọn khung này bằng phím Tab để tạm dừng chuyển ảnh.">
+                <div class="danh-sach-banner">
+                    <img src="Images/banner-iphone.jpg"
+                    alt="Thiết kế titan của iPhone 15 Pro và iPhone 15 Pro Max">
+                    <img src="Images/banner-samsung.jpg"
+                    alt="Các màu sắc của Samsung Galaxy S24 Ultra">
+                    <img src="Images/banner-oppo.png"
+                    alt="OPPO Reno11 5G màu xanh và xám">
+                </div>
+            </div>
+            <a href="#san-pham">Xem sản phẩm</a>
+
+        </section>
+
+       
+        <section id="gioi-thieu">
+            <h2>Giới thiệu Cells Phone</h2>
+            <div class="noi-dung-gioi-thieu">
+                <img src="Images/quay-trung-bay.jpg" alt="Ảnh minh họa điện thoại trên quầy trưng bày tại cửa hàng">
+                <div>
+                    <p>Cells Phone cung cấp các dòng điện phục vụ cho mọi nhu cầu như học và làm việc
+
+                     </p>
+                     <p>Chúng tôi luôn sẵn sàng tư vấn để bạn lựa chọn sản phẩm phù hợp với nhu cầu sử dụng</p>
+                     <h3>Cam kết cửa hàng</h3>
+                    <ul>
+                    <li>thông tin sản phẩm rõ ràng</li>
+                    <li>tư vẫn nhiệt tình</li>
+                    <li>Hỗ trợ bảo hành theo chính sách</li>
+                    </ul>
+                </div>    
+            </div>    
+        </section>
+
+        <!--Sản phẩm -->
+        <section id="san-pham">
+            <h2>Điện thoại nổi bật</h2>
+            <p> Vui lòng liên hệ để kiểm tra giá và tình trạng hàng.</p>
+            <div class="danh-sach-san-pham">
+                <article class="the-san-pham">
+                    <a href="#anh-iphone" id="xem-iphone" class="mo-anh" aria-label="Xem ảnh lớn iPhone 15 Pro Max">
+                        <img src="Images/iphone-15-pro-max.png" alt="Điện thoại iPhone 15 Pro Max màu titan tự nhiên">
+                        <span>Xem ảnh lớn</span>
+                    </a>
+                    <h3>iPhone 15 Pro Max</h3>
+                    <p>Dung lượng: 256GB</p>
+                    <p class="gia">Giá: 24.990.000đ</p>
+                    <a href="#lien-he" class="nut">Liên hệ tư vấn</a>
+                </article>
+                <article class="the-san-pham">
+                    <a href="#anh-samsung" id="xem-samsung" class="mo-anh" aria-label="Xem ảnh lớn Samsung Galaxy S24 Ultra">
+                        <img src="Images/samsung-galaxy-s24-ultra.webp" alt="Điện thoại Samsung Galaxy S24 Ultra màu vàng titan">
+                        <span>Xem ảnh lớn</span>
+                    </a>
+                    <h3>Samsung Galaxy S24 Ultra</h3>
+                    <p>Dung lượng: 256GB</p>
+                    <p class="gia">Giá: 23.450.000đ</p>
+                    <a href="#lien-he" class="nut">Liên hệ tư vấn</a>
+                </article>
+                <article class="the-san-pham">
+                    <a href="#anh-oppo" id="xem-oppo" class="mo-anh" aria-label="Xem ảnh lớn OPPO Reno11 5G">
+                        <img src="Images/oppo-reno11-5g.png" alt="Điện thoại OPPO Reno11 5G màu xanh">
+                        <span>Xem ảnh lớn</span>
+                    </a>
+                    <h3>OPPO Reno11 5G</h3>
+                    <p>Dung lượng: 256GB</p>
+                    <p class="gia">Giá: 9.050.000đ</p>
+                    <a href="#lien-he" class="nut">Liên hệ tư vấn</a>
+                </article>
+                <article class="the-san-pham">
+                    <a href="#anh-redmi" id="xem-redmi" class="mo-anh" aria-label="Xem ảnh lớn Redmi Note 13 4G">
+                        <img src="Images/redmi-note-13.webp" alt="Điện thoại Redmi Note 13 4G màu đen">
+                        <span>Xem ảnh lớn</span>
+                    </a>
+                    <h3>Redmi Note 13 4G</h3>
+                    <p>Dung lượng: 128GB</p>
+                    <p class="gia">Giá: 3.790.000đ</p>
+                    <a href="#lien-he" class="nut">Liên hệ tư vấn</a>
+                </article>   
+                
+            </div>
+
+        </section>
+
+       
+    <section id="so-sanh">
+        <h2>So sánh sản phẩm</h2>
+
+        <table>
+            <caption>Giá tham khảo cập nhật ngày 22/10/2026</caption>
+
+            <thead>
+                <tr>
+                    <th>Tên điện thoại</th>
+                    <th>Dung lượng</th>
+                    <th>Giá</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>iPhone 15 Pro Max</td>
+                    <td>256GB</td>
+                    <td>24.990.000đ</td>
+                </tr>
+                <tr>
+                    <td>Samsung Galaxy S24 Ultra</td>
+                    <td>256GB</td>
+                    <td>23.450.000đ</td>
+                </tr>
+                <tr>
+                    <td>OPPO Reno11 5G</td>
+                    <td>256GB</td>
+                    <td>9.050.000đ</td>
+                </tr>
+                <tr>
+                    <td>Redmi Note 13 4G</td>
+                    <td>128GB</td>
+                    <td>3.790.000đ</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+        
+    <section id="dich-vu">
+        <h2>Dịch vụ của cửa hàng</h2>
+
+        <div class="danh-sach-dich-vu">
+            <article class="the-dich-vu">
+                <h3>Hỗ trợ bảo hành</h3>
+                <p>Tiếp nhận và tư vấn bảo hành theo chính sách sản phẩm.</p>
+            </article>
+
+            <article class="the-dich-vu">
+                <h3>Sửa chữa điện thoại</h3>
+                <p>Kiểm tra thiết bị và tư vấn phương án sửa chữa.</p>
+            </article>
+
+            <article class="the-dich-vu">
+                <h3>Giao hàng</h3>
+                <p>Hỗ trợ giao sản phẩm theo địa chỉ khách hàng cung cấp.</p>
+            </article>
+        </div>
+    </section>
+        
+    <section id="lien-he">
+        <h2>Liên hệ tư vấn</h2>
+
+        <p>Giờ mở cửa: 8:00 - 21:00 mỗi ngày.</p>
+        <p>Email: Cellsphone@example.com</p>
+
+        <div class="lien-he-bo-cuc">
+        <form action="#lien-he">
+            <div class="nhom-form">
+                <label for="ho-ten">Họ và tên:</label>
+                <input type="text" id="ho-ten" name="ho-ten"
+                       placeholder="Nhập họ và tên" required>
+            </div>
+
+            <div class="nhom-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Nhập email" required>
+            </div>
+
+            <div class="nhom-form">
+                <label for="dien-thoai">Số điện thoại:</label>
+                <input type="tel" id="dien-thoai" name="dien-thoai"
+                       placeholder="Nhập số điện thoại" required>
+            </div>
+
+            <div class="nhom-form">
+                <label for="noi-dung">Nội dung cần tư vấn:</label>
+                <textarea id="noi-dung" name="noi-dung" rows="5"
+                          placeholder="Bạn đang quan tâm sản phẩm nào?"
+                          required></textarea>
+            </div>
+
+            <button type="submit">Gửi thông tin</button>
+            <button type="reset" class="nut-phu">Nhập lại</button>
+        </form>
+
+        <div class="thong-tin-ban-do">
+            <h3>Bản đồ khu vực TP.HCM</h3>
+            <div class="ban-do">
+                <iframe
+                    src="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City%2C%20Vietnam&amp;z=12&amp;output=embed"
+                    title="Bản đồ minh họa khu vực Thành phố Hồ Chí Minh"
+                    width="640" height="360" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                </iframe>
+            </div>
+            <a class="lien-ket-ban-do" href="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City%2C%20Vietnam" target="_blank" rel="noopener noreferrer">Mở bản đồ trên Google Maps</a>
+        </div>
+        </div>
+    </section>
+</main>
+
+    <footer>
+    <p>&copy; Cells Phone</p>
+    <p>Đồng hành cùng bạn trong việc lựa chọn điện thoại.</p>
+    <a href="#trang-chu">Về đầu trang</a>
+    </footer>
+
+    <!-- Lightbox: :target hien khung anh co id trung voi lien ket vua chon. -->
+    <div id="anh-iphone" class="lightbox" tabindex="-1" role="region" aria-label="Ảnh lớn iPhone 15 Pro Max">
+        <div class="lightbox-noi-dung">
+            <a href="#xem-iphone" class="dong-lightbox" aria-label="Đóng ảnh iPhone 15 Pro Max">Đóng ảnh &times;</a>
+            <h2>iPhone 15 Pro Max</h2>
+            <img src="Images/iphone-15-pro-max.png" alt="Ảnh lớn iPhone 15 Pro Max màu titan tự nhiên">
+            <div class="dieu-huong-anh">
+                <a href="#anh-redmi">&larr; Ảnh trước</a>
+                <span>1 / 4</span>
+                <a href="#anh-samsung">Ảnh tiếp &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="anh-samsung" class="lightbox" tabindex="-1" role="region" aria-label="Ảnh lớn Samsung Galaxy S24 Ultra">
+        <div class="lightbox-noi-dung">
+            <a href="#xem-samsung" class="dong-lightbox" aria-label="Đóng ảnh Samsung Galaxy S24 Ultra">Đóng ảnh &times;</a>
+            <h2>Samsung Galaxy S24 Ultra</h2>
+            <img src="Images/samsung-galaxy-s24-ultra.webp" alt="Ảnh lớn Samsung Galaxy S24 Ultra màu vàng titan">
+            <div class="dieu-huong-anh">
+                <a href="#anh-iphone">&larr; Ảnh trước</a>
+                <span>2 / 4</span>
+                <a href="#anh-oppo">Ảnh tiếp &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="anh-oppo" class="lightbox" tabindex="-1" role="region" aria-label="Ảnh lớn OPPO Reno11 5G">
+        <div class="lightbox-noi-dung">
+            <a href="#xem-oppo" class="dong-lightbox" aria-label="Đóng ảnh OPPO Reno11 5G">Đóng ảnh &times;</a>
+            <h2>OPPO Reno11 5G</h2>
+            <img src="Images/oppo-reno11-5g.png" alt="Ảnh lớn OPPO Reno11 5G màu xanh">
+            <div class="dieu-huong-anh">
+                <a href="#anh-samsung">&larr; Ảnh trước</a>
+                <span>3 / 4</span>
+                <a href="#anh-redmi">Ảnh tiếp &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="anh-redmi" class="lightbox" tabindex="-1" role="region" aria-label="Ảnh lớn Redmi Note 13 4G">
+        <div class="lightbox-noi-dung">
+            <a href="#xem-redmi" class="dong-lightbox" aria-label="Đóng ảnh Redmi Note 13 4G">Đóng ảnh &times;</a>
+            <h2>Redmi Note 13 4G</h2>
+            <img src="Images/redmi-note-13.webp" alt="Ảnh lớn Redmi Note 13 4G màu đen">
+            <div class="dieu-huong-anh">
+                <a href="#anh-oppo">&larr; Ảnh trước</a>
+                <span>4 / 4</span>
+                <a href="#anh-iphone">Ảnh tiếp &rarr;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

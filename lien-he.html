@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ | Cells Phone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="trang-con trang-lien-he">
+    <header id="dau-trang">
+        <div class="noi-dung-dau-trang">
+            <!-- Nut Menu va ten shop nam ben trai. -->
+            <div class="cum-ben-trai">
+                <details class="menu-tha">
+                    <summary class="nut-menu" aria-label="Menu">
+                        <span aria-hidden="true">&#9776;</span>
+                        <span class="chu-menu">Menu</span>
+                        <span class="mui-ten-menu" aria-hidden="true">&#9662;</span>
+                    </summary>
+                    <nav aria-label="Menu thu gọn">
+                        <ul>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                            <li><a href="san-pham.html">Sản phẩm</a></li>
+                            <li><a href="dich-vu.html">Dịch vụ</a></li>
+                            <li><a href="lien-he.html" class="lien-he-menu dang-xem" aria-current="page">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </details>
+
+                <div class="thuong-hieu">
+                    <h1>Shop Cells Phone</h1>
+                    <p class="khau-hieu">Điện thoại phù hợp — Tư vấn tận tâm</p>
+                </div>
+            </div>
+
+            <!-- Cac lien ket trang luon hien thi ben phai. -->
+            <nav class="menu-ngang" aria-label="Điều hướng chính">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                    <li><a href="san-pham.html">Sản phẩm</a></li>
+                    <li><a href="dich-vu.html">Dịch vụ</a></li>
+                    <li><a href="lien-he.html" class="lien-he-menu dang-xem" aria-current="page">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <p class="duong-dan">
+            <a href="index.html">Trang chủ</a>
+            <span aria-hidden="true"> / </span>
+            Liên hệ
+        </p>
+
+        <section id="lien-he">
+            <p class="nhan-gioi-thieu">SẴN SÀNG LẮNG NGHE BẠN</p>
+            <h2>Liên hệ tư vấn</h2>
+            <p>Bạn đang tìm một chiếc điện thoại phù hợp? Hãy cho Cells Phone biết nhu cầu và sản phẩm bạn quan tâm.</p>
+            <p><strong>Giờ mở cửa:</strong> 8:00 - 21:00 mỗi ngày.</p>
+            <p><strong>Email minh họa:</strong> Cellsphone@example.com</p>
+
+            <!-- Form và bản đồ nằm cạnh nhau trên máy tính, xếp dọc trên điện thoại. -->
+            <div class="lien-he-bo-cuc">
+                <form action="#lien-he">
+                    <h3>Thông tin cần tư vấn</h3>
+                    <p class="ghi-chu-form" id="ghi-chu-form">Biểu mẫu minh họa cho bài thực hành, chưa gửi yêu cầu tư vấn thật.</p>
+
+                    <div class="nhom-form">
+                        <label for="ho-ten">Họ và tên:</label>
+                        <input type="text" id="ho-ten" name="ho-ten"
+                               placeholder="Nhập họ và tên" required>
+                    </div>
+
+                    <div class="nhom-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Nhập email" required>
+                    </div>
+
+                    <div class="nhom-form">
+                        <label for="dien-thoai">Số điện thoại:</label>
+                        <input type="tel" id="dien-thoai" name="dien-thoai"
+                               placeholder="Nhập số điện thoại" required>
+                    </div>
+
+                    <div class="nhom-form">
+                        <label for="noi-dung">Nội dung cần tư vấn:</label>
+                        <textarea id="noi-dung" name="noi-dung" rows="5"
+                                  placeholder="Bạn đang quan tâm sản phẩm nào?"
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit" aria-describedby="ghi-chu-form">Gửi thông tin</button>
+                    <button type="reset" class="nut-phu">Nhập lại</button>
+                </form>
+
+                <div class="thong-tin-ban-do">
+                    <h3>Bản đồ khu vực TP.HCM</h3>
+                    <div class="ban-do">
+                        <iframe
+                            src="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City%2C%20Vietnam&amp;z=12&amp;output=embed"
+                            title="Bản đồ minh họa khu vực Thành phố Hồ Chí Minh"
+                            width="640" height="360" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <a class="lien-ket-ban-do" href="https://www.google.com/maps?q=Ho%20Chi%20Minh%20City%2C%20Vietnam" target="_blank" rel="noopener noreferrer">Mở bản đồ trên Google Maps</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Cells Phone</p>
+        <p>Đồng hành cùng bạn trong việc lựa chọn điện thoại.</p>
+        <a href="#dau-trang">Về đầu trang</a>
+    </footer>
+</body>
+</html>
